@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>يوسف لخدمة المسلمين</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma,Arial,sans-serif;
+}
+
+body{
+background:#f4f4f4;
+color:#222;
+transition:.3s;
+}
+
+header{
+background:linear-gradient(90deg,#0066cc,#000,#cc0000);
+color:#fff;
+padding:30px;
+text-align:center;
+}
+
+header h1{
+font-size:40px;
+}
+
+header p{
+margin-top:10px;
+font-size:18px;
+}
+
+nav{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+background:#111;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:15px 20px;
+transition:.3s;
+}
+
+nav a:hover{
+background:#0066cc;
+}
+
+.container{
+width:95%;
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin:20px 0;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.box{
+background:#0066cc;
+color:white;
+padding:20px;
+border-radius:12px;
+text-align:center;
+transition:.3s;
+cursor:pointer;
+}
+
+.box:hover{
+transform:scale(1.05);
+background:#004a99;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:#0066cc;
+color:white;
+}
+
+input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+margin-top:10px;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+.dark{
+background:#111;
+color:white;
+}
+
+.dark .card{
+background:#222;
+color:white;
+}
+
+.dark nav{
+background:#000;
+}
+
+.dark footer{
+background:#000;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>🕌 يوسف لخدمة المسلمين</h1>
+<p>القرآن الكريم والخدمات الإسلامية</p>
+</header>
+
+<nav>
+<a href="#">الرئيسية</a>
+<a href="#">القرآن الكريم</a>
+<a href="#">التفسير</a>
+<a href="#">الأذكار</a>
+<a href="#">المسبحة</a>
+<a href="#">أوقات الصلاة</a>
+<a href="#">اتجاه القبلة</a>
+</nav>
+
+<div class="container">
+
+<div class="card">
+<h2>مرحبًا بكم</h2>
+<p>
+هذا الموقع يهدف إلى توفير مجموعة من الخدمات الإسلامية في مكان واحد، مثل القرآن الكريم، والأذكار، والمسبحة الإلكترونية، وغيرها.
+</p>
+</div>
+
+<div class="grid">
+
+<div class="box">📖 القرآن الكريم</div>
+<div class="box">📚 التفسير</div>
+<div class="box">🕋 أوقات الصلاة</div>
+<div class="box">🧭 اتجاه القبلة</div>
+<div class="box">📿 المسبحة</div>
+<div class="box">🤲 الأذكار</div>
+
+</div><div class="card">
+
+<h2>🔍 البحث داخل الموقع</h2>
+
+<input type="text" id="search" placeholder="اكتب ما تريد البحث عنه...">
+
+<br><br>
+
+<button onclick="toggleDark()">🌙 الوضع الليلي</button>
+
+</div>
+
+<div class="card">
+
+<h2>🕒 الساعة والتاريخ</h2>
+
+<h3 id="clock"></h3>
+
+</div>
+
+<div class="card">
+
+<h2>📿 المسبحة الإلكترونية</h2>
+
+<h1 id="count">0</h1>
+
+<button onclick="tasbeeh()">سبحان الله</button>
+
+<button onclick="resetTasbeeh()">إعادة</button>
+
+</div>
+
+<div class="card">
+
+<h2>🤲 أذكار قصيرة</h2>
+
+<ul>
+
+<li>سبحان الله.</li>
+
+<li>الحمد لله.</li>
+
+<li>الله أكبر.</li>
+
+<li>لا إله إلا الله وحده لا شريك له.</li>
+
+<li>أستغفر الله العظيم وأتوب إليه.</li>
+
+</ul>
+
+</div>
+
+<script>
+
+function toggleDark(){
+
+document.body.classList.toggle("dark");
+
+}
+
+let counter=0;
+
+function tasbeeh(){
+
+counter++;
+
+document.getElementById("count").innerHTML=counter;
+
+}
+
+function resetTasbeeh(){
+
+counter=0;
+
+document.getElementById("count").innerHTML=0;
+
+}
+
+setInterval(function(){
+
+const now=new Date();
+
+document.getElementById("clock").innerHTML=
+
+now.toLocaleTimeString('ar-EG')+"<br>"+
+
+now.toLocaleDateString('ar-EG');
+
+},1000);
+
+</script><div class="card">
+
+<h2>📖 <div class="card">
+
+<button onclick="toggleQuran()" style="width:100%;padding:15px;font-size:20px;background:#0066cc;color:#fff;border:none;border-radius:10px;">
+📖 القرآن الكريم
+</button>
+
+<div id="quranList" style="display:none;margin-top:20px;">
+
+<div class="grid">
+
+<div class="box">1. الفاتحة</div>
+<div class="box">2. البقرة</div>
+<div class="box">3. آل عمران</div>
+<div class="box">4. النساء</div>
+<div class="box">5. المائدة</div>
+<div class="box">6. الأنعام</div>
+<div class="box">7. الأعراف</div>
+<div class="box">8. الأنفال</div>
+<div class="box">9. التوبة</div>
+<div class="box">10. يونس</div>
+
+<!-- أكمل بقية السور حتى 114 -->
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+function toggleQuran() {
+    const list = document.getElementById("quranList");
+
+    if (list.style.display === "none" || list.style.display === "") {
+        list.style.display = "block";
+    } else {
+        list.style.display = "none";
+    }
+}
+</script>
+</div>
+
+</div><div class="card">
+
+<h2>📖 فهرس السور (61 - 114)</h2>
+
+<div class="grid">
+
+<div iv>
+<div
+<div class="card">
+    <h2>🧭 اتجاه القبلة</h2>
+
+    <p>اضغط على الزر ثم وجّه الهاتف لمعرفة اتجاه القبلة.</p>
+
+    <button onclick="startQibla()">تحديد اتجاه القبلة</button>
+
+    <h3 id="direction">بانتظار البدء...</h3>
+</div>
+
+<script>
+function startQibla() {
+    if (!window.DeviceOrientationEvent) {
+        document.getElementById("direction").innerHTML =
+        "هذا الجهاز لا يدعم البوصلة.";
+        return;
+    }
+
+    window.addEventListener("deviceorientation", function(event) {
+        let heading = event.webkitCompassHeading || (360 - event.alpha);
+        let qibla = 136; // اتجاه القبلة التقريبي من القاهرة
+        let diff = (qibla - heading + 360) % 360;
+
+        document.getElementById("direction").innerHTML =
+        "اتجه نحو: " + Math.round(diff) + "°";
+    });
+}
+</script><!-- مواقيت الصلاة -->
+<div class="card">
+    <h2>🕌 مواقيت الصلاة</h2>
+
+    <button onclick="loadPrayerTimes()">📍 جلب مواقيت الصلاة</button>
+
+    <table id="prayerTable" style="width:100%;margin-top:20px;border-collapse:collapse;text-align:center;">
+        <tr style="background:#0066cc;color:#fff;">
+            <th>الصلاة</th>
+            <th>الوقت</th>
+        </tr>
+        <tr><td>الفجر</td><td id="Fajr">--:--</td></tr>
+        <tr><td>الشروق</td><td id="Sunrise">--:--</td></tr>
+        <tr><td>الظهر</td><td id="Dhuhr">--:--</td></tr>
+        <tr><td>العصر</td><td id="Asr">--:--</td></tr>
+        <tr><td>المغرب</td><td id="Maghrib">--:--</td></tr>
+        <tr><td>العشاء</td><td id="Isha">--:--</td></tr>
+    </table>
+</div>
+
+<script>
+async function loadPrayerTimes(){
+
+if(!navigator.geolocation){
+alert("الموقع الجغرافي غير مدعوم.");
+return;
+}
+
+navigator.geolocation.getCurrentPosition(async function(position){
+
+let lat = position.coords.latitude;
+let lon = position.coords.longitude;
+
+let url = `https://api.aladhan.com/v1/timings?latitude=${lat}&longitude=${lon}&method=5`;
+
+try{
+
+let response = await fetch(url);
+let data = await response.json();
+
+let t = data.data.timings;
+
+document.getElementById("Fajr").innerHTML=t.Fajr;
+document.getElementById("Sunrise").innerHTML=t.Sunrise;
+document.getElementById("Dhuhr").innerHTML=t.Dhuhr;
+document.getElementById("Asr").innerHTML=t.Asr;
+document.getElementById("Maghrib").innerHTML=t.Maghrib;
+document.getElementById("Isha").innerHTML=t.Isha;
+
+}catch(e){
+alert("تعذر تحميل مواقيت الصلاة.");
+}
+
+});
+}
+</script>
+
+<style>
+#prayerTable td,
+#prayerTable th{
+padding:12px;
+border:1px solid #ddd;
+}
+
+#prayerTable tr:nth-child(even){
+background:#f5f5f5;
+}
+
+.dark #prayerTable tr:nth-child(even){
+background:#333;
+}
+
+.dark #prayerTable td,
+.dark #prayerTable th{
+border:1px solid #555;
+}
+</style>
